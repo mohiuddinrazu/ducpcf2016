@@ -1,0 +1,58 @@
+#include <iostream>
+#include <cmath>
+#include <cstdlib>
+#include <iomanip>
+
+using namespace std;
+
+int main(){
+double matrix1[3][3]={{0}};
+double matrix2[3][3]={{0}};
+double result[3][3]={{0}};
+
+//first matrix input
+cout<<"Enter the values of the first matrix elements: \n";
+	for(int i=0; i<=2;++i)
+	{
+		for (int j=0; j<=2;++j)
+		{
+			cout<<"		a"<<i+1<<j+1<<"=";
+			cin>>matrix1[i][j];
+		}
+	}
+//second one
+cout<<"Enter the values of the second matrix elements: \n";
+	for(int i=0; i<=2;++i)
+	{
+		for (int j=0; j<=2;++j)
+		{
+			cout<<"		a"<<i+1<<j+1<<"=";
+			cin>>matrix2[i][j];
+		}
+	}
+
+//multipling matrices
+for (int i=0; i<= 2; ++i)
+{
+	for (int j = 0; j <= 2; ++j)
+	{
+		for (int k = 0; k <= 2; ++k)
+		{
+			result[i][j]+= matrix1[i][k]*matrix2[k][j];
+		}
+	}
+}
+
+//output result
+cout<<"result: \n";
+for (int i = 0; i < 3; ++i)
+{
+	for (int j = 0; j < 3; ++j)
+	{
+		cout<<"   "<<setw(5)<<result[i][j];
+		if (j==2)
+			cout<<endl;
+	}
+}
+
+}
