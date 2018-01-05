@@ -1,0 +1,54 @@
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+double int_mc1(double, double, int);
+double f(double); 
+
+int main()
+{
+    double a, b, mc, errest;
+    int i, n;
+    int ntimes;
+    const double pi = 3.1415926;
+      
+    cout.precision(6);
+    
+    cout << "Result is: " << int_mc1(0, 4*pi, 10000000) << endl;
+
+    return 0;
+}
+
+/*
+ *  Function for integration
+*/
+double f(double x) {
+return 1/(1 + (sin(x)*sin(x)));
+}    
+
+
+double int_mc1(double a, double b, int n){
+
+    double r, x, y, u;
+    
+    srand(time(NULL));               /* seed value (uses system time) */
+
+    long int count  = 0;
+
+    for (int i = 1; i <= n; ++i)
+    {
+        u = 1.0*rand()/(RAND_MAX); /* random number between 0.0 and 1.0 */
+        x = a + (b-a)*u;
+        y = u; /*given function oscillates between 0.5 to 1*/
+            
+            if (f(x) >= y )
+                count++;
+    }
+        r = (b-a)*(1.0)*((double)count/(double)n);
+
+    return r;
+}
