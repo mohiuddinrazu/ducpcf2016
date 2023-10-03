@@ -1,2 +1,2 @@
 # ducpcf2016
-Solutions to the important questions of Computational Physics course final examination, 2016, University of Dhaka.
+Solutions to selected questions of Computational Physics Test 2016, University of Dhaka. Most codes written in C/C++. Solutions include numerical and analytical modeling of various physical phenomena.
